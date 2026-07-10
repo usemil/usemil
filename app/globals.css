@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 html, body {
-  background-color: #f8fafc; /* Very soft, clean slate-50 */
-  color: #0f172a;
+  min-height: 100vh;
+  margin: 0;
+  /* Deep, premium slate gradient that stays fixed */
+  background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f8fafc;
 }
