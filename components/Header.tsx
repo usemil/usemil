@@ -75,7 +75,10 @@ export default function Header() {
 
   {/* Mobile Menu */}
   <button
-    onClick={() => setShowMenu(true)}
+    onClick={() => {
+  setShowSearch(false);
+  setShowMenu(true);
+}}
     className="rounded-lg p-2 text-slate-300 transition hover:bg-slate-800 md:hidden"
   >
     <Menu className="h-6 w-6" />
