@@ -1,9 +1,26 @@
+"use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { tools } from "@/data/tools";
 import { ArrowRight, Clock3, ShieldCheck } from "lucide-react";
 
 export default function Home() {
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  if (!category) return;
+
+  setTimeout(() => {
+    document.getElementById(category)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    window.history.replaceState({}, "", "/");
+  }, 100);
+}, []);
   const categorizedTools = tools.reduce((acc, tool) => {
     if (!acc[tool.category]) acc[tool.category] = [];
     acc[tool.category].push(tool);
