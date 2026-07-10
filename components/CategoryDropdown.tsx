@@ -6,9 +6,18 @@ import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { tools } from "@/data/tools";
 import Link from "next/link";
-export default function CategoryDropdown() {
+interface CategoryDropdownProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  onOpen?: () => void;
+}
+
+export default function CategoryDropdown({
+  open,
+  setOpen,
+  onOpen,
+}: CategoryDropdownProps) {
     
-  const [open, setOpen] = useState(false);
   const pathname = usePathname();
 const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -58,7 +67,10 @@ function goToCategory(category: string) {
       
     >
       <button
-  onClick={() => setOpen((prev) => !prev)}
+  onClick={() => {
+    onOpen?.();
+    setOpen((prev) => !prev);
+  }}
   className={`flex items-center gap-1 transition ${
     open ? "text-white" : "text-slate-300 hover:text-white"
   }`}

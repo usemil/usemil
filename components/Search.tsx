@@ -1,11 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { tools } from "@/data/tools";
 import Link from "next/link";
 import { Search as SearchIcon } from "lucide-react";
 
-export default function Search() {
+interface SearchProps {
+  resetTrigger?: number;
+}
+
+export default function Search({ resetTrigger }: SearchProps) {
   const [query, setQuery] = useState("");
+  useEffect(() => {
+  setQuery("");
+}, [resetTrigger]);
   const filtered = query 
     ? tools.filter(t => t.name.toLowerCase().includes(query.toLowerCase())) 
     : [];

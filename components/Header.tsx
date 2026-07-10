@@ -18,7 +18,8 @@ import Search from "@/components/Search";
 export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
+const [showCategories, setShowCategories] = useState(false);
+const [searchReset, setSearchReset] = useState(0);
   const closeMenu = () => setShowMenu(false);
 
   return (
@@ -43,7 +44,14 @@ export default function Header() {
     Home
   </Link>
 
-  <CategoryDropdown />
+<CategoryDropdown
+  open={showCategories}
+  setOpen={setShowCategories}
+  onOpen={() => {
+    setShowSearch(false);
+    setSearchReset((prev) => prev + 1);
+  }}
+/>
 
   <Link
     href="/about"
@@ -61,9 +69,12 @@ export default function Header() {
 </nav>
 
   {/* Desktop Search */}
-  <div className="hidden md:block">
-    <Search />
-  </div>
+  <div
+  className="hidden md:block"
+  onClick={() => setShowCategories(false)}
+>
+  <Search resetTrigger={searchReset} />
+</div>
 
   {/* Mobile Search */}
   <button
