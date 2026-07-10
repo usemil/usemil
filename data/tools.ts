@@ -30,7 +30,7 @@ export const tools = [
   { name: "Word Counter", slug: "/word-counter", category: "Text Utilities", description: "Count words, characters, and sentences.", icon: FileText, available: false },
   { name: "Case Converter", slug: "/case-converter", category: "Text Utilities", description: "Convert text to UPPERCASE, lowercase, etc.", icon: FileText, available: false },
   { name: "Lorem Ipsum Generator", slug: "/lorem-ipsum", category: "Text Utilities", description: "Generate placeholder text for designs.", icon: FileText, available: false },
-  { name: "Text Diff Checker", slug: "/diff-checker", category: "Text Utilities", line: "Compare two text files line-by-line.", icon: FileText, available: false },
+  { name: "Text Diff Checker", slug: "/diff-checker", category: "Text Utilities", description: "Compare two text files line-by-line.", icon: FileText, available: false },
   { name: "Duplicate Line Remover", slug: "/remove-duplicates", category: "Text Utilities", description: "Clean up lists by removing duplicate lines.", icon: FileText, available: false },
   { name: "Find & Replace", slug: "/find-replace", category: "Text Utilities", description: "Bulk find and replace text strings.", icon: FileText, available: false },
   { name: "Sort Text Lines", slug: "/sort-text", category: "Text Utilities", description: "Sort text alphabetically or numerically.", icon: FileText, available: false },
