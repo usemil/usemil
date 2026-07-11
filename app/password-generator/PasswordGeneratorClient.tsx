@@ -150,7 +150,7 @@ export default function PasswordGenerator() {
         </p>
         <div className="mx-auto mt-6 flex max-w-fit items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-medium text-emerald-300 shadow-sm backdrop-blur-sm sm:text-sm">
           <ShieldCheck className="h-4 w-4 shrink-0" />
-          Client-Side: Data logic stays localized to your system runtime environment.
+          Whenever possible, your data never leaves your device. Your security is our priority.
         </div>
       </div>
 

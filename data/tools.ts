@@ -24,7 +24,15 @@ export const tools = [
       "client-side password generator",
       "free local password tool"
     ],  },
-  { name: "Password Strength Checker", slug: "/password-strength-checker", category: "Security & Privacy", description: "Check how secure your existing password is.", icon: ShieldCheck, available: false },
+  { name: "Password Strength Checker", slug: "/password-strength-checker", category: "Security & Privacy", description: "Check how secure your existing password is.", icon: ShieldCheck, available: true, metaTitle: "Password Strength Checker & Tester | UseMil",
+    metaDescription: "Test the strength, entropy, and complexity of your passwords locally in your browser. Ensure your security without sending data to a server.",
+    keywords: [
+      "password strength checker", 
+      "password tester", 
+      "check password security", 
+      "local password strength tool",
+      "password entropy calculator"
+    ], },
   { name: "UUID/GUID Generator", slug: "/uuid-generator", category: "Security & Privacy", description: "Generate v4 secure random UUIDs.", icon: ShieldCheck, available: false },
   { name: "Bcrypt Hash Generator", slug: "/bcrypt-generator", category: "Security & Privacy", description: "Generate and verify Bcrypt hashes.", icon: ShieldCheck, available: false },
   { name: "MD5 Hash Generator", slug: "/md5-generator", category: "Security & Privacy", description: "Quickly generate MD5 hashes.", icon: ShieldCheck, available: false },
