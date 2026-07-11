@@ -10,9 +10,11 @@ interface SearchProps {
 
 export default function Search({ resetTrigger }: SearchProps) {
   const [query, setQuery] = useState("");
+  
   useEffect(() => {
-  setQuery("");
-}, [resetTrigger]);
+    setQuery("");
+  }, [resetTrigger]);
+
   const filtered = query 
     ? tools.filter(t => t.name.toLowerCase().includes(query.toLowerCase())) 
     : [];
@@ -33,7 +35,12 @@ export default function Search({ resetTrigger }: SearchProps) {
       {query && filtered.length > 0 && (
         <div className="absolute left-0 right-0 top-full mt-2 z-[100] w-full rounded-xl border border-slate-700 bg-slate-800 p-2 shadow-xl">
           {filtered.map(tool => (
-            <Link key={tool.slug} href={tool.slug} className="block rounded-lg p-2 text-sm text-white hover:bg-slate-700">
+            <Link 
+              key={tool.slug} 
+              href={tool.slug} 
+              onClick={() => setQuery("")} 
+              className="block rounded-lg p-2 text-sm text-white hover:bg-slate-700"
+            >
               {tool.name}
             </Link>
           ))}
