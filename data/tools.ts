@@ -5,10 +5,12 @@ import {
   Calculator, 
   Palette, 
   Scale, 
+  Hash,
   Clock, 
   Search, 
   Image as ImageIcon, 
-  Gamepad2 
+  Gamepad2, 
+  Fingerprint
 } from "lucide-react";
 
 
@@ -33,8 +35,12 @@ export const tools = [
       "local password strength tool",
       "password entropy calculator"
     ], },
-  { name: "UUID/GUID Generator", slug: "/uuid-generator", category: "Security & Privacy", description: "Generate v4 secure random UUIDs.", icon: ShieldCheck, available: false },
-  { name: "Bcrypt Hash Generator", slug: "/bcrypt-generator", category: "Security & Privacy", description: "Generate and verify Bcrypt hashes.", icon: ShieldCheck, available: false },
+  { name: "UUID/GUID Generator", slug: "/uuid-generator", category: "Security & Privacy", description: "Generate v4 secure random UUIDs.", icon: ShieldCheck, available: true, metaTitle: "Bulk UUID & GUID Generator | UseMil",
+    metaDescription: "Instantly generate up to 500 cryptographically secure v4 UUIDs/GUIDs. Format with uppercase and hyphens, and copy to clipboard instantly.",
+    keywords: ["uuid generator", "guid generator", "bulk uuid", "random uuid creator", "v4 uuid"], },
+  { name: "Bcrypt Hash Generator", slug: "/bcrypt-generator", category: "Security & Privacy", description: "Generate and verify Bcrypt hashes.", icon: ShieldCheck, available: true,metaTitle: "Bcrypt Hash Generator & Verifier | UseMil",
+    metaDescription: "Securely generate and verify bcrypt hashes completely locally in your browser. Features adjustable salt rounds (work factor) and instant validation.",
+    keywords: ["bcrypt generator", "bcrypt verifier", "local hash generator", "bcrypt online", "password hashing"], },
   { name: "MD5 Hash Generator", slug: "/md5-generator", category: "Security & Privacy", description: "Quickly generate MD5 hashes.", icon: ShieldCheck, available: false },
   { name: "SHA Hash Generator", slug: "/sha-generator", category: "Security & Privacy", description: "Generate SHA-1, SHA-256, and SHA-512 hashes.", icon: ShieldCheck, available: false },
   { name: "HMAC Generator", slug: "/hmac-generator", category: "Security & Privacy", description: "Create HMAC authentication codes.", icon: ShieldCheck, available: false },
