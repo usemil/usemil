@@ -11,9 +11,19 @@ import {
   Gamepad2 
 } from "lucide-react";
 
+
 export const tools = [
   // 🔐 Security & Privacy Tools
-  { name: "Password Generator", slug: "/password-generator", category: "Security & Privacy", description: "Generate strong, secure passwords instantly.", icon: ShieldCheck, available: true },
+  { name: "Password Generator", slug: "/password-generator", category: "Security & Privacy", description: "Generate strong, secure passwords instantly.", icon: ShieldCheck, available: true,metaTitle: "Random Password Generator | Secure & Local | UseMil",
+    metaDescription: "Generate strong, secure, and highly randomized passwords directly in your browser. 100% local processing, offline capable, and zero data tracking.",
+    keywords: [
+      "password generator", 
+      "secure password maker", 
+      "random password generator", 
+      "strong password creator", 
+      "client-side password generator",
+      "free local password tool"
+    ],  },
   { name: "Password Strength Checker", slug: "/password-strength-checker", category: "Security & Privacy", description: "Check how secure your existing password is.", icon: ShieldCheck, available: false },
   { name: "UUID/GUID Generator", slug: "/uuid-generator", category: "Security & Privacy", description: "Generate v4 secure random UUIDs.", icon: ShieldCheck, available: false },
   { name: "Bcrypt Hash Generator", slug: "/bcrypt-generator", category: "Security & Privacy", description: "Generate and verify Bcrypt hashes.", icon: ShieldCheck, available: false },

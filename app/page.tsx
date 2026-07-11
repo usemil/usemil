@@ -32,7 +32,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="px-6 py-20 text-center">
         <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
-          Convert & Process <span className="text-blue-400">Instantly</span>
+          Convert & Process <span className="text-blue-500">Instantly</span>
         </h1>
 
         <p className="mx-auto max-w-2xl text-base font-medium text-slate-300 md:text-xl">
