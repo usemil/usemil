@@ -16,7 +16,17 @@ export default function Search({ resetTrigger }: SearchProps) {
   }, [resetTrigger]);
 
   const filtered = query 
-    ? tools.filter(t => t.name.toLowerCase().includes(query.toLowerCase())) 
+    ? tools.filter(t => {
+        const q = query.toLowerCase();
+        
+        const matchesName = t.name.toLowerCase().includes(q);
+        const matchesDescription = t.description.toLowerCase().includes(q);
+        const matchesKeywords = t.keywords?.some((keyword) => 
+          keyword.toLowerCase().includes(q)
+        );
+
+        return matchesName || matchesDescription || matchesKeywords;
+      })
     : [];
 
   return (
@@ -41,7 +51,8 @@ export default function Search({ resetTrigger }: SearchProps) {
               onClick={() => setQuery("")} 
               className="block rounded-lg p-2 text-sm text-white hover:bg-slate-700"
             >
-              {tool.name}
+              <div className="font-medium">{tool.name}</div>
+              <div className="text-xs text-slate-400 truncate">{tool.description}</div>
             </Link>
           ))}
         </div>
