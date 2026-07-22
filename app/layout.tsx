@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import BackToTop from "@/components/BackToTop"; // 1. Import the component
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">
           {children}
+          <GoogleAnalytics gaId="G-LJE2QSGKRE" />
         </main>
         <Footer />
         <BackToTop /> {/* 2. Add it here */}
