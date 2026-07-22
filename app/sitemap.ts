@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
-import { tools } from '@/data/tools'; // Adjust this import path if your tools.ts is located elsewhere
+import { tools } from '@/data/tools'; 
+
+export const dynamic = 'force-static'; // <-- ADD THIS LINE
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://usemil.online';
